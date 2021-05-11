@@ -24,12 +24,12 @@
 add_action( 'admin_menu', 'wporg_options_page' );
 function wporg_options_page() {
     add_menu_page(
-        'WPOrg',
-        'WPOrg Options',
+        'Onlineformular Download',
+        'Onlineformular Download',
         'manage_options',
         plugin_dir_path(__FILE__) . 'admin/view.php',
         null,
-        plugin_dir_url(__FILE__) . 'images/icon_wporg.png',
+        plugin_dir_url(__FILE__) . 'images/excel.ico',
         20
     );
 }
