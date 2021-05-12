@@ -1,21 +1,11 @@
-<?php
-echo 'Loading...'
-$args = array(
-	'post_type'		=> 'flamingo_inbound'
-);
-$my_posts = get_posts( $args );
-
-if( ! empty( $my_posts ) ){
-	// $output = '<ul>';
-	foreach ( $my_posts as $p ){
-		echo $p->post_title . '<br>';
-		// $output .= '<li><a href="' . get_permalink( $p->ID ) . '">' 
-		// . $p->post_title . '</a></li>';
-	}
-	// $output .= '<ul>';
-}
-else {
-	echo 'Keine Posts'
-}
-// echo $output
-?>
+<?php echo "<script id='php_data' type='text/template'>" . json_encode(get_posts(array("post_type"=>"flamingo_inbound"))) . "</script>";?>
+<div id="app">
+  {{ message }}
+  <ol>
+    <li v-for="post in posts">
+      {{ post.post_title }}
+    </li>
+  </ol>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<?php echo '<script src="' . plugin_dir_url( __FILE__ ) . 'index.js"></script>'; ?>
