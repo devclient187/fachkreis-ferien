@@ -1,18 +1,20 @@
-<h1>Cool!</h1>
 <?php
+echo 'Loading...'
 $args = array(
-	'numberposts'	=> 20,
-	'category'		=> 4
+	'post_type'		=> 'flamingo_inbound'
 );
 $my_posts = get_posts( $args );
 
 if( ! empty( $my_posts ) ){
-	$output = '<ul>';
+	// $output = '<ul>';
 	foreach ( $my_posts as $p ){
-		$output .= '<li><a href="' . get_permalink( $p->ID ) . '">' 
-		. $p->post_title . '</a></li>';
+		echo $p->post_title . '<br>';
+		// $output .= '<li><a href="' . get_permalink( $p->ID ) . '">' 
+		// . $p->post_title . '</a></li>';
 	}
-	$output .= '<ul>';
+	// $output .= '<ul>';
 }
-
-echo $output
+else {
+	echo 'Keine Posts'
+}
+// echo $output

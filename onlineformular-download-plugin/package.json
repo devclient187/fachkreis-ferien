@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tar.exe -a -c -f ..\\dist\\onlineformular-download-plugin.zip ..\\onlineformular-download-plugin",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
