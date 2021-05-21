@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod && cd dist && tar.exe -a -c -f onlineformular-download-plugin.zip onlineformulardownload",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pack": "tar.exe -a -c -f dist\\onlineformular-download-plugin.zip dist\\onlineformulardownload"
   },
   "private": true,
   "dependencies": {
